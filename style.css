@@ -1,0 +1,365 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-image: url("./kridakruthi-logo.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  position: relative;   /* ADD THIS */
+  overflow: hidden;
+}
+/* ================= BUBBLE BACKGROUND ================= */
+
+.bubble-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bubble-bg span {
+  position: absolute;
+  bottom: -120px;
+  border-radius: 50%;
+  animation: 
+    bubbleMove 8s infinite ease-in,
+    bubbleColor 5s infinite linear;
+
+}
+
+/* Bubble animation */
+@keyframes bubbleMove {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  100% {
+    transform: translate3d(80px, -120vh, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes bubbleColor {
+  0% {
+    background: rgba(4, 181, 241, 0.25); /* light blue */
+  }
+  25% {
+    background: rgba(240, 229, 229, 0); /* light green */
+  }
+  50% {
+    background: rgba(240, 6, 41, 0.25); /* light pink */
+  }
+  75% {
+    background: rgba(242, 207, 7, 0.25);   /* gold */
+  }
+  100% {
+    background: rgba(6, 177, 234, 0.25); /* back to blue */
+  }
+}
+
+
+.bubble-bg span:nth-child(1) { left: 5%;  width: 30px; height: 30px; animation-duration: 14s; }
+.bubble-bg span:nth-child(2) { left: 15%; width: 25px; height: 25px; animation-duration: 10s; }
+.bubble-bg span:nth-child(3) { left: 28%; width: 40px; height: 40px; animation-duration: 18s; }
+.bubble-bg span:nth-child(4) { left: 40%; width: 22px; height: 22px; animation-duration: 12s; }
+.bubble-bg span:nth-child(5) { left: 55%; width: 35px; height: 35px; animation-duration: 16s; }
+.bubble-bg span:nth-child(6) { left: 65%; width: 41px; height: 41px; animation-duration: 9s; }
+.bubble-bg span:nth-child(7) { left: 75%; width: 45px; height: 45px; animation-duration: 20s; }
+.bubble-bg span:nth-child(8) { left: 85%; width: 29px; height: 29px; animation-duration: 11s; }
+.bubble-bg span:nth-child(9) { left: 95%; width: 28px; height: 28px; animation-duration: 15s; }
+.bubble-bg span:nth-child(10){ left: 50%; width: 32px; height: 32px; animation-duration: 13s; }
+
+.hero * {
+  position: relative;
+  z-index: 2;
+}
+
+
+.hero h1 {
+  font-size: 64px;
+  letter-spacing: 6px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 40px;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* CONTENT SECTION */
+.content {
+  min-height: 100vh;
+  padding: 80px 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  background: rgba(0, 0, 0, 0.6);
+  gap: 40px;
+  
+}
+
+/* CARDS */
+.card {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: #ffd700;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* TYPING CURSOR */
+#typing-text::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* COUNTDOWN SECTION */
+.countdown {
+  min-height: 60vh;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.countdown h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #ffd700;
+}
+
+/* TIMER BOX */
+.timer {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px 30px;
+  border-radius: 15px;
+  min-width: 120px;
+  backdrop-filter: blur(8px);
+  animation: pulse 1s infinite alternate;
+}
+
+.time-box span {
+  font-size: 42px;
+  font-weight: bold;
+  display: block;
+}
+
+.time-box small {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;           /* Arrange buttons in a row */
+  gap: 15px;               /* Space between buttons */
+  flex-wrap: wrap;         /* Wrap to next line if screen is small */
+  justify-content: center; /* Center the buttons horizontally */
+  margin-top: 20px;
+}
+
+.button-container button {
+  width:auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #949288;     /* Gold color */
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.button-container button:hover {
+  background: #ebeb0c;     /* Brighter on hover */
+  transform: scale(1.05);
+}
+/*    */
+.button-container {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.button-container button {
+  width: 200px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #ffd700;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.button-container button:hover,
+.button-container button.active {
+  background: #ffea00;
+  transform: scale(1.05);
+}
+
+#events-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+#events-list li {
+  background: rgba(255,255,255,0.1);
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/*   */
+#scanner-container h3 {
+  margin-bottom: 10px;
+  color: #ffd700;
+}
+
+#qr-video {
+  border: 2px solid #ffd700;
+}
+
+#qr-result {
+  text-align: center;
+}
+
+
+.college-name {
+  font-size: 36px;        /* bigger font */
+  font-weight: 700;       /* bold */
+  letter-spacing: 2px;    /* spacing between letters */
+  color: #ffd700;         /* gold color for highlight */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* soft shadow for glow */
+}
+
+.college-name {
+  font-size: 40px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #151414, #151413, #191918);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 10px rgba(102, 52, 52, 0.7); }
+  100% { text-shadow: 0 0 20px rgb(80, 114, 148); }
+}
+
+
+.principal-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.principal-box img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  margin-bottom: 15px;
+}
+
+.principal-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.principal-qualification {
+  font-size: 16px;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+
+/* faculties  */
+.presented-by {
+  text-align: center;
+  padding: 30px 10px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.presented-by p {
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.presented-by h3 {
+  font-size: 24px;
+  color: #ffd700;
+  margin: 8px 0;
+}
+
+.presented-by span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
