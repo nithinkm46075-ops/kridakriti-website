@@ -60,11 +60,11 @@ const countdown = setInterval(() => {
 document.addEventListener("DOMContentLoaded", () => {
   // EVENTS DATA
   const eventsData = {
-    "27": ["Nail Art","Mehandi","Makeover","Rangoli","Hair Style","Face Painting","Pot Painting","Art and Craft work","Collage","Essay Writing"],
-    "28": ["Solo Dance", "Group Dance", "Solo Singing", "Group Singing", "Ramp Walk", "Instrumental Play"],
-    "29": ["Without Fire Cooking","With Fire Cooking"],
-    "30": ["Throw Ball", "Throw ball", "Kabaddi", "Kho-Kho"],
-    "31": ["Chess", "Carrom Board", "Athletics(100m,200m,400m)", "Shot Put", "Relay Race"]
+    "27": ["Nail Art", "Mehandi", "MakeOver", "Hair Style", "Essay Writing"],
+    "28": ["Rangoli", "Face Painting", "Pot Painting", "Art & Craft Work", "Collage"],
+    "29": ["Solo Dance", "Solo Singing", "Solo Ramp Walk", "Group Dance", "Group Singing", "Instruental Play", "Duet Ramp Walk"],
+    "30": ["Volley Ball", "Throw Ball", "Kabaddi", "Kho-Kho", "Chess", "Carrom_Board"],
+    "31": ["Athletics(100m,200m,400m)", "Shot Put", "Relay Race", "With Fire Cooking", "WithOut Fire Cooking"]
   };
 
   const buttons = document.querySelectorAll(".button-container button");
