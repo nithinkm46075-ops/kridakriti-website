@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "27": ["Nail Art", "Mehandi", "MakeOver", "Hair Style", "Essay Writing"],
     "28": ["Rangoli", "Face Painting", "Pot Painting", "Art & Craft Work", "Collage"],
     "29": ["Solo Dance", "Solo Singing", "Solo Ramp Walk", "Group Dance", "Group Singing", "Instrumental Play", "Duet Ramp Walk"],
-    "30": ["Volley Ball", "Throw Ball", "Kabaddi", "Kho-Kho", "Chess", "Carrom_Board"],
-    "31": ["Athletics(100m,200m,400m)", "Shot Put", "Relay Race", "With Fire Cooking", "WithOut Fire Cooking"]
+    "30": ["Commerce Mela", "Chess", "Carrom Board", "Athletics(100m,200m,400m)", "Shot Put", "Relay Race"],
+    "31": ["Volley Ball", "Throw Ball", "Kabaddi", "Kho - Kho"]
   };
 
   const buttons = document.querySelectorAll(".button-container button");
